@@ -145,7 +145,10 @@ class FPDF_TPL extends FPDF {
     function endTemplate() {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::endTemplate'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $endOfTemplate = call_user_func_array(array($this, 'TCPDF::endTemplate'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $endOfTemplate;
         }
         
         if ($this->_intpl) {
@@ -275,7 +278,10 @@ class FPDF_TPL extends FPDF {
     public function SetFont($family, $style = '', $size = 0, $fontfile='', $subset='default', $out=true) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::SetFont'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $font = call_user_func_array(array($this, 'TCPDF::SetFont'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $font;
         }
         
         parent::SetFont($family, $style, $size);
@@ -299,7 +305,10 @@ class FPDF_TPL extends FPDF {
     ) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::Image'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $image = call_user_func_array(array($this, 'TCPDF::Image'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $image;
         }
         
         $ret = parent::Image($file, $x, $y, $w, $h, $type, $link);
@@ -320,7 +329,10 @@ class FPDF_TPL extends FPDF {
     function AddPage($orientation = '', $format = '', $keepmargins = false, $tocpage = false) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::AddPage'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $page = call_user_func_array(array($this, 'TCPDF::AddPage'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $page;
         }
         
         if ($this->_intpl)
@@ -335,7 +347,10 @@ class FPDF_TPL extends FPDF {
     function Link($x, $y, $w, $h, $link, $spaces = 0) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::Link'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $link = call_user_func_array(array($this, 'TCPDF::Link'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $link;
         }
         
         if ($this->_intpl)
@@ -347,7 +362,10 @@ class FPDF_TPL extends FPDF {
     function AddLink() {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::AddLink'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $addLink = call_user_func_array(array($this, 'TCPDF::AddLink'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $addLink;
         }
         
         if ($this->_intpl)
@@ -358,7 +376,10 @@ class FPDF_TPL extends FPDF {
     function SetLink($link, $y = 0, $page = -1) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            return call_user_func_array(array($this, 'TCPDF::SetLink'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            $setLink = call_user_func_array(array($this, 'TCPDF::SetLink'), $args);
+            error_reporting(error_reporting() ^ E_DEPRECATED);
+            return $setLink;
         }
         
         if ($this->_intpl)
