@@ -145,7 +145,7 @@ class FPDF_TPL extends FPDF {
     function endTemplate() {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'endTemplate';
+            $callable = TCPDF::class . '::endTemplate';
             return call_user_func_array($callable, $args);
         }
         
@@ -276,7 +276,7 @@ class FPDF_TPL extends FPDF {
     public function SetFont($family, $style = '', $size = 0, $fontfile='', $subset='default', $out=true) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'SetFont';
+            $callable = TCPDF::class . '::SetFont';
             return call_user_func_array($callable, $args);
         }
         
@@ -301,7 +301,7 @@ class FPDF_TPL extends FPDF {
     ) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'Image';
+            $callable = TCPDF::class . '::Image';
             return call_user_func_array($callable, $args);
         }
         
@@ -323,7 +323,7 @@ class FPDF_TPL extends FPDF {
     function AddPage($orientation = '', $format = '', $keepmargins = false, $tocpage = false) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'AddPage';
+            $callable = TCPDF::class . '::AddPage';
             return call_user_func_array($callable, $args);
         }
         
@@ -339,7 +339,7 @@ class FPDF_TPL extends FPDF {
     function Link($x, $y, $w, $h, $link, $spaces = 0) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'Link';
+            $callable = TCPDF::class . '::Link';
             return call_user_func_array($callable, $args);
         }
         
@@ -352,7 +352,7 @@ class FPDF_TPL extends FPDF {
     function AddLink() {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'AddLink';
+            $callable = TCPDF::class . '::AddLink';
             return call_user_func_array($callable, $args);
         }
         
@@ -364,7 +364,7 @@ class FPDF_TPL extends FPDF {
     function SetLink($link, $y = 0, $page = -1) {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
-            $callable = TCPDF::class . 'SetLink';
+            $callable = TCPDF::class . '::SetLink';
             return call_user_func_array($callable, $args);
         }
         
